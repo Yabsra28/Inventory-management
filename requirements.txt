@@ -20,8 +20,10 @@ joblib @ file:///C:/b/abs_f4b98l6lgk/croot/joblib_1718217224240/work
 jsonschema @ file:///C:/b/abs_394_t6__xq/croot/jsonschema_1728486718320/work
 jsonschema-specifications @ file:///C:/b/abs_0brvm6vryw/croot/jsonschema-specifications_1699032417323/work
 kiwisolver @ file:///C:/b/abs_88mdhvtahm/croot/kiwisolver_1672387921783/work
+markdown-it-py==3.0.0
 MarkupSafe @ file:///C:/b/abs_a0ma7ge0jc/croot/markupsafe_1738584052792/work
 matplotlib==3.9.2
+mdurl==0.1.2
 mkl-service==2.4.0
 mkl_fft @ file:///C:/Users/dev-admin/mkl/mkl_fft_1730823082242/work
 mkl_random @ file:///C:/Users/dev-admin/mkl/mkl_random_1730822522280/work
@@ -34,6 +36,7 @@ pillow @ file:///C:/b/abs_b50vowcrzo/croot/pillow_1738010273782/work
 protobuf @ file:///C:/b/abs_b5v84rwh56/croot/protobuf_1742419721750/work/bazel-bin/python/dist/protobuf-5.29.3-cp39-abi3-win_amd64.whl#sha256=ef54e0300a9852a77af7818526267c684fb5930f91b114d02f9a8fe715dba559
 pyarrow @ file:///C:/b/abs_0aneze9pgl/croot/pyarrow_1738229440651/work/python
 pydeck @ file:///C:/b/abs_47xw5z_59x/croot/pydeck_1738340983078/work
+Pygments==2.19.1
 pyparsing @ file:///C:/b/abs_40z8gyj9wi/croot/pyparsing_1731445739241/work
 PyQt6==6.7.1
 PyQt6_sip @ file:///C:/b/abs_28s7k4h_hl/croot/pyqt-split_1740498234166/work/pyqt_sip
@@ -43,6 +46,7 @@ pytz @ file:///C:/b/abs_6ap4tsz1ox/croot/pytz_1713974360290/work
 PyYAML @ file:///C:/b/abs_14xkfs39bx/croot/pyyaml_1728657968772/work
 referencing @ file:///C:/b/abs_09f4hj6adf/croot/referencing_1699012097448/work
 requests @ file:///C:/b/abs_c3508vg8ez/croot/requests_1731000584867/work
+rich==14.0.0
 rpds-py @ file:///C:/b/abs_0c6z5kcdb6/croot/rpds-py_1736545465023/work
 scikit-learn @ file:///C:/b/abs_0dwalqot3o/croot/scikit-learn_1737988780693/work/dist/scikit_learn-1.6.1-cp39-cp39-win_amd64.whl#sha256=5d1fd0a91f9c244e66bf5bcca98333fb0af3ed1fea525b6d0398fc53eb9dc17f
 scipy @ file:///C:/Users/dev-admin/cr_scipy-feedstock/scipy_1733774324044/work/dist/scipy-1.13.1-cp39-cp39-win_amd64.whl#sha256=f7218697f964ae4372cdcb6f20a05db0d338ccc574c96e9dbf235ed6547dd462
