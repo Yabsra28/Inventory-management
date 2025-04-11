@@ -1,12 +1,3 @@
-import streamlit as st  # Ensure this line is present
-import joblib
-import numpy as np
-import pandas as pd
-import os
-from model_metrics import get_model_accuracy
-
-print("Current working directory:", os.getcwd())
-
 import streamlit as st
 import joblib
 import numpy as np
@@ -17,13 +8,10 @@ from model_metrics import get_model_accuracy
 # Get the directory of the current script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+@st.cache_data
 def load_file(file_name):
-    
+    """Helper function to load files with proper path resolution"""
     file_path = os.path.join(SCRIPT_DIR, file_name)
-    
-    # Debugging output
-    st.write(f"Attempting to load: {file_path}")
-    st.write(f"Files in directory: {os.listdir(SCRIPT_DIR)}")
     
     if not os.path.isfile(file_path):
         raise FileNotFoundError(f"{file_path} does not exist. Please check the path.")
@@ -52,6 +40,10 @@ except FileNotFoundError as e:
     st.error("- model.pkl") 
     st.error("- label_encoder.pkl")
     st.stop()
+
+# Rest of your app code...
+st.title("Inventory Management System with ML Predictions")
+# ... continue with your existing app code
 
 # Rest of your app code...
 
