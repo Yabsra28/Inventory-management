@@ -10,8 +10,7 @@ env/
 venv/
 
 # Ignore data files
-Data/*
-.csv
+
 
 # Ignore log files
 *.log
