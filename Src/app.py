@@ -19,7 +19,7 @@ def load_processed_data(file_path):
         raise FileNotFoundError(f"{file_path} does not exist. Please check the path.")
     
     else:# Load the data as the file exists
-    df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path)
     return df
 
 # Load the processed data (replace with the correct file path)
