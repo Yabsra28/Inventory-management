@@ -18,7 +18,7 @@ from model_metrics import get_model_accuracy
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_file(file_name):
-    """Helper function to load files with proper path resolution"""
+    
     file_path = os.path.join(SCRIPT_DIR, file_name)
     
     # Debugging output
