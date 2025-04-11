@@ -6,8 +6,7 @@ import os
 from model_metrics import get_model_accuracy
 
 print("Current working directory:", os.getcwd())
-file_path = 'processed_data.csv' 
-data2= load_processed_data(file_path)
+
 @st.cache_data
 def load_processed_data(file_path):
     
@@ -23,7 +22,8 @@ def load_processed_data(file_path):
     return df
 
 # Load the processed data (replace with the correct file path)
-
+file_path = 'processed_data.csv' 
+data2= load_processed_data(file_path)
 # Get the model accuracy
 accuracy = get_model_accuracy()
 
