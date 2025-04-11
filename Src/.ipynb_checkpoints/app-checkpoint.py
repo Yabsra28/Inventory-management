@@ -6,8 +6,23 @@ import os
 from model_metrics import get_model_accuracy
 
 print("Current working directory:", os.getcwd())
-file_path = 'processed_data.csv' 
-data2= load_processed_data(file_path)
+
+@st.cache_data
+def load_data(uploaded_file):
+    return pd.read_csv(uploaded_file)
+
+# For local development
+try:
+    data2 = pd.read_csv('processed_data.csv')
+except FileNotFoundError:
+    # For cloud deployment
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+    if uploaded_file is not None:
+        data2 = load_data(uploaded_file)
+    else:
+        st.warning("Please upload the data file")
+        st.stop()
+    '''
 @st.cache_data
 def load_processed_data(file_path):
     
@@ -19,11 +34,12 @@ def load_processed_data(file_path):
         raise FileNotFoundError(f"{file_path} does not exist. Please check the path.")
     
     else:# Load the data as the file exists
-    df = pd.read_csv(file_path)
+       df = pd.read_csv(file_path)
     return df
 
 # Load the processed data (replace with the correct file path)
-
+file_path = 'processed_data.csv' 
+data2= load_processed_data(file_path)'''
 # Get the model accuracy
 accuracy = get_model_accuracy()
 
