@@ -2,10 +2,24 @@ import streamlit as st  # Ensure this line is present
 import joblib
 import numpy as np
 import pandas as pd
+import os
 from model_metrics import get_model_accuracy
 
+print("Current working directory:", os.getcwd())
+
 @st.cache_data
+processed_data_path = '../Data/processed_data.csv' 
+data2= load_processed_data(processed_data_path)
 def load_processed_data(file_path):
+    
+    # Print the processed data path for debugging
+    print(f"Processed data path: {file_path}")
+
+    # Check if the file exists
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError(f"{file_path} does not exist. Please check the path.")
+    
+    else:# Load the data as the file exists
     df = pd.read_csv(file_path)
     return df
 
