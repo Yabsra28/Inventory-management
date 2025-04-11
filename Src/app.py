@@ -42,7 +42,7 @@ except FileNotFoundError as e:
     st.stop()
 
 # Rest of your app code...
-st.title("Inventory Management System with ML Predictions")
+
 # ... continue with your existing app code
 
 # Rest of your app code...
