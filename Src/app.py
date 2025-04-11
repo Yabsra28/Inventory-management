@@ -7,47 +7,55 @@ from model_metrics import get_model_accuracy
 
 print("Current working directory:", os.getcwd())
 
-@st.cache_data
-def load_data(uploaded_file):
-    return pd.read_csv(uploaded_file)
+import streamlit as st
+import joblib
+import numpy as np
+import pandas as pd
+import os
+from model_metrics import get_model_accuracy
 
-# For local development
-try:
-    data2 = pd.read_csv('processed_data.csv')
-except FileNotFoundError:
-    # For cloud deployment
-    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
-    if uploaded_file is not None:
-        data2 = load_data(uploaded_file)
-    else:
-        st.warning("Please upload the data file")
-        st.stop()
-    '''
-@st.cache_data
-def load_processed_data(file_path):
+# Get the directory of the current script
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def load_file(file_name):
+    """Helper function to load files with proper path resolution"""
+    file_path = os.path.join(SCRIPT_DIR, file_name)
     
-    # Print the processed data path for debugging
-    print(f"Processed data path: {file_path}")
-
-    # Check if the file exists
+    # Debugging output
+    st.write(f"Attempting to load: {file_path}")
+    st.write(f"Files in directory: {os.listdir(SCRIPT_DIR)}")
+    
     if not os.path.isfile(file_path):
         raise FileNotFoundError(f"{file_path} does not exist. Please check the path.")
     
-    else:# Load the data as the file exists
-       df = pd.read_csv(file_path)
-    return df
+    if file_name.endswith('.csv'):
+        return pd.read_csv(file_path)
+    else:
+        return joblib.load(file_path)
 
-# Load the processed data (replace with the correct file path)
-file_path = 'processed_data.csv' 
-data2= load_processed_data(file_path)'''
-# Get the model accuracy
-accuracy = get_model_accuracy()
+# Load all files with proper path handling
+try:
+    # Load data
+    data2 = load_file('processed_data.csv')
+    
+    # Load model and encoder
+    model = load_file('model.pkl')
+    le_item = load_file('label_encoder.pkl')
+    
+    # Get model accuracy
+    accuracy = get_model_accuracy()
 
-# Load the encoder from the file
-le_item = joblib.load('label_encoder.pkl')
+except FileNotFoundError as e:
+    st.error(f"Failed to load required files: {e}")
+    st.error("Please ensure these files are in your GitHub repository:")
+    st.error("- processed_data.csv")
+    st.error("- model.pkl") 
+    st.error("- label_encoder.pkl")
+    st.stop()
 
-# Load the trained model
-model = joblib.load('model.pkl')
+# Rest of your app code...
+
+# ... continue with your existing app code
 
 st.title("Inventory Management System with ML Predictions")
 #st.write(f"Model Accuracy: {accuracy:.2f}")
