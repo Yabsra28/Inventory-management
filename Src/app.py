@@ -31,8 +31,6 @@ sorted_items = data2.sort_values(by='date_of_purchased')
 #earliest_purchased = sorted_items.head(5)
 latest_purchased = sorted_items.tail(5)
 
-#st.subheader("Earliest Purchased Items")
-#st.dataframe(earliest_purchased[['item_name', 'date_of_purchased', 'quantity']])
 
 #st.subheader("Latest Purchased Items")
 st.dataframe(latest_purchased[['item_name', 'date_of_purchased', 'quantity']])
