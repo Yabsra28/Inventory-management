@@ -8,8 +8,8 @@ from model_metrics import get_model_accuracy
 print("Current working directory:", os.getcwd())
 
 @st.cache_data
-processed_data_path = 'processed_data.csv' 
-data2= load_processed_data(processed_data_path)
+file_path = 'processed_data.csv' 
+data2= load_processed_data(file_path)
 def load_processed_data(file_path):
     
     # Print the processed data path for debugging
