@@ -23,7 +23,7 @@ le_item = joblib.load('label_encoder.pkl')
 model = joblib.load('model.pkl')
 
 st.title("Inventory Management System with ML Predictions")
-st.write(f"Model Accuracy: {accuracy:.2f}")
+#st.write(f"Model Accuracy: {accuracy:.2f}")
 
 # Dashboard: Display Earliest and Latest Purchased Items
 st.header("Latest Purchased Items")
