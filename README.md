@@ -1,0 +1,3 @@
+An intelligent inventory management system that allows users to select from existing items and predicts which projects might need those items based on historical consumption patterns and project requirements. Using an API link, the system fetches the data. 
+The user interacts with the system through a Streamlit application, which visualizes key metrics related to inventory stock management. The application also provides insights into the latest purchased items and monitors stock-out levels for consumable items. Additionally, it ranks items based on minimum, maximum, and stock-out levels to prioritize critical inventory needs and features charts and graphs to illustrate stock levels, trends, and forecasts, facilitating better decision-making for inventory management.
+
